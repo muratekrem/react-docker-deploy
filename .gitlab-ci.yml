@@ -1,0 +1,10 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - cd bilyoner-api  # Flask uygulamasının bulunduğu dizine gidin
+    - python app.py &  # Flask uygulamasını arka planda çalıştırın
+    - cd ../deneme     # React projesinin bulunduğu dizine gidin
+    - npm start &      # React projesini arka planda çalıştırın
